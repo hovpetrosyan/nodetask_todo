@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+	form(action='/' method='post')
+		input(name='todoinput')
+		button Add
+	if todo
+		table
+			each row in todo
+				tr
+					td= row.todo
+					td
+						a(href='delete?id=' +row.id ) 
+							button DELETE
+					td
+						a(href='/edit?id=' +row.id)
+							button EDIT
+

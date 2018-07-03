@@ -1,0 +1,6 @@
+extends layout.pug
+
+block content
+	form(action='/edit/'+editableObj.id method='post')
+		input(name='todoinput' value=editableObj.todo)
+		button Save
